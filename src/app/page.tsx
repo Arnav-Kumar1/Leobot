@@ -148,63 +148,38 @@ export default function Page() {
           />
         )}
 
-        <div className="flex gap-8">
-          {/* Sidebar Navigation */}
-          <div className="w-64 flex-shrink-0">
-            {isHydrated && (
-              <SectionNavigation
-                sections={sections}
-                currentSectionIndex={currentSectionIndex}
-                onSectionSelect={handleSectionJump}
-                responses={responses}
-              />
-            )}
-          </div>
+        {/* Horizontal Section Navigation */}
+        {isHydrated && (
+          <SectionNavigation
+            sections={sections}
+            currentSectionIndex={currentSectionIndex}
+            onSectionSelect={handleSectionJump}
+            responses={responses}
+          />
+        )}
 
-          {/* Main Content */}
-          <div className="flex-1">
-            {isHydrated && (
-              <QuestionForm
-                section={currentSection}
-                responses={responses}
-                onResponseChange={handleResponseChange}
-              />
-            )}
+        {/* Main Content */}
+        <div className="mt-6">
+          {isHydrated && (
+            <QuestionForm
+              section={currentSection}
+              responses={responses}
+              onResponseChange={handleResponseChange}
+            />
+          )}
 
-            {/* Navigation Buttons */}
-            {isHydrated && (
-              <div className="flex justify-between items-center mt-8 pt-6 border-t">
-                <button
-                  onClick={handlePreviousSection}
-                  disabled={currentSectionIndex === 0}
-                  className="px-6 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed"
-                >
-                  Previous
-                </button>
-
-                <div className="text-sm text-gray-500">
-                  Section {currentSectionIndex + 1} of {sections.length}
-                </div>
-
-                {isLastSection ? (
-                  <button
-                    onClick={handleExport}
-                    disabled={isSaving}
-                    className="px-6 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 disabled:opacity-50"
-                  >
-                    {isSaving ? 'Saving...' : 'Complete & Export'}
-                  </button>
-                ) : (
-                  <button
-                    onClick={handleNextSection}
-                    className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700"
-                  >
-                    Next
-                  </button>
-                )}
-              </div>
-            )}
-          </div>
+          {/* Export Button */}
+          {isHydrated && (
+            <div className="flex justify-center mt-8 pt-6 border-t">
+              <button
+                onClick={handleExport}
+                disabled={isSaving}
+                className="px-8 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 font-medium"
+              >
+                {isSaving ? 'Saving...' : 'Complete & Export'}
+              </button>
+            </div>
+          )}
         </div>
 
         {/* Auto-save indicator */}

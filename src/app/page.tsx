@@ -137,7 +137,7 @@ export default function Page() {
         {questionsData.meta.settings.collect_email && (
           <div className="mb-6 p-4 bg-white rounded-lg shadow-sm">
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Email (optional - for saving progress)
+              Email (optional - to resume progress on other devices)
             </label>
             <input
               type="email"

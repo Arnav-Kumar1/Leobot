@@ -34,13 +34,7 @@
           "example_good": "Luck provides the opportunity, but execution is entirely on us.",
           "example_bad": "Everything happens for a reason."
         },
-        {
-          "id": "q_core_philosophy",
-          "text": "What's your personal philosophy about success and failure?",
-          "hint": "Your relationship with outcomes.",
-          "example_good": "Success is temporary, but the systems you build to achieve it are permanent.",
-          "example_bad": "Success is good, failure is bad."
-        },
+
         {
           "id": "q_change_resistance",
           "text": "What beliefs have you held that you later had to completely abandon?",
@@ -236,13 +230,6 @@
           "hint": "Syntax of displeasure.",
           "example_good": "I go icy cold, very polite, and use shorter, clipped sentences.",
           "example_bad": "I get mad."
-        },
-        {
-          "id": "q_calm_down_time",
-          "text": "How long does it take for you to calm down?",
-          "hint": "Refractory period.",
-          "example_good": "I need 20 minutes of silence, then I reset.",
-          "example_bad": "A while."
         }
       ]
     },
@@ -432,13 +419,7 @@
       "id": "sec_purpose",
       "title": "Purpose & Drives",
       "questions": [
-        {
-          "id": "q_motivation_bedrock",
-          "text": "What keeps you motivated when nothing’s working?",
-          "hint": "Bedrock motivation.",
-          "example_good": "The fear of mediocrity.",
-          "example_bad": "Hope."
-        },
+
         {
           "id": "q_intrinsic_drive",
           "text": "What do you chase even when nobody notices?",
@@ -607,13 +588,6 @@
           "hint": "Alien concepts.",
           "example_good": "Passive aggression. I prefer direct conflict over hidden agendas.",
           "example_bad": "Lying."
-        },
-        {
-          "id": "q_human_nature",
-          "text": "How do you see human nature overall—optimistic or skeptical?",
-          "hint": "Worldview.",
-          "example_good": "Trust, but verify. Optimistic but cautious.",
-          "example_bad": "Good."
         }
       ]
     },

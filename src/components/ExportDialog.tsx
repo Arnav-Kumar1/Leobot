@@ -37,34 +37,31 @@ export default function ExportDialog({ isOpen, onClose, responses, userEmail }: 
     setIsExporting(true);
     
     try {
-      // Prepare comprehensive export data with question context
+      // Clean export data for mindclone training
       const exportData = {
         timestamp: new Date().toISOString(),
         userEmail: userEmail || 'anonymous',
         totalResponses: Object.keys(responses).length,
         completionRate: `${Math.round((Object.values(responses).filter(r => r?.trim()).length / Object.keys(responses).length) * 100)}%`,
         
-        // Raw responses (for quick reference)
-        responses: responses,
-        
-        // Detailed Q&A pairs with context (for mindclone training)
-        detailedResponses: Object.entries(responses)
+        // Clean Q&A pairs for AI training
+        trainingData: Object.entries(responses)
           .filter(([_, answer]) => answer?.trim())
           .map(([questionId, answer]) => {
-            // Find the question in the data structure
             const questionData = findQuestionById(questionId);
             return {
-              questionId,
               question: questionData?.question || questionId,
               answer: answer.trim(),
-              section: questionData?.section || 'Unknown',
-              category: questionData?.category || 'General'
+              category: questionData?.section || 'General'
             };
           }),
           
+        // Raw data (for reference)
+        rawResponses: responses,
+          
         metadata: {
           exportedAt: new Date().toISOString(),
-          version: '2.0',
+          version: '3.0',
           source: 'Mindclone Data Intake',
           purpose: 'AI Personality Clone Training Data'
         }
@@ -106,34 +103,31 @@ export default function ExportDialog({ isOpen, onClose, responses, userEmail }: 
     setIsEmailing(true);
     
     try {
-      // Create comprehensive export data with question context
+      // Clean export data for mindclone training
       const exportData = {
         timestamp: new Date().toISOString(),
         userEmail: userEmail || 'anonymous',
         totalResponses: Object.keys(responses).length,
         completionRate: `${Math.round((Object.values(responses).filter(r => r?.trim()).length / Object.keys(responses).length) * 100)}%`,
         
-        // Raw responses (for quick reference)
-        responses: responses,
-        
-        // Detailed Q&A pairs with context (for mindclone training)
-        detailedResponses: Object.entries(responses)
+        // Clean Q&A pairs for AI training
+        trainingData: Object.entries(responses)
           .filter(([_, answer]) => answer?.trim())
           .map(([questionId, answer]) => {
-            // Find the question in the data structure
             const questionData = findQuestionById(questionId);
             return {
-              questionId,
               question: questionData?.question || questionId,
               answer: answer.trim(),
-              section: questionData?.section || 'Unknown',
-              category: questionData?.category || 'General'
+              category: questionData?.section || 'General'
             };
           }),
           
+        // Raw data (for reference)
+        rawResponses: responses,
+          
         metadata: {
           exportedAt: new Date().toISOString(),
-          version: '2.0',
+          version: '3.0',
           source: 'Mindclone Data Intake',
           purpose: 'AI Personality Clone Training Data'
         }

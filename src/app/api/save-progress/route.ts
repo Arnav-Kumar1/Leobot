@@ -11,13 +11,13 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'No responses provided' }, { status: 400 });
     }
 
-    // For now, we'll just log the data and return success
-    // In a real app, you'd save to a database like Firebase/Supabase
+    // Log the data for server logs (you can see this in Vercel Function logs)
     console.log('Saving progress:', {
       timestamp: new Date().toISOString(),
       userEmail: userEmail || 'anonymous',
       responseCount: Object.keys(responses).length,
-      isAutoSave
+      isAutoSave,
+      fullData: responses // This logs the actual responses
     });
 
     // Simulate a small delay for realistic feel

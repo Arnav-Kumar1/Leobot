@@ -10,6 +10,7 @@ interface ExportDialogProps {
 
 export default function ExportDialog({ isOpen, onClose, responses, userEmail }: ExportDialogProps) {
   const [isExporting, setIsExporting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleExport = async () => {
     setIsExporting(true);
@@ -60,6 +61,33 @@ export default function ExportDialog({ isOpen, onClose, responses, userEmail }: 
     }
   };
 
+  const handleSubmit = async () => {
+    setIsSubmitting(true);
+    
+    try {
+      const response = await fetch('/api/submit-form', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          responses,
+          userEmail
+        })
+      });
+
+      if (response.ok) {
+        alert('✅ Form submitted successfully! Arnav will receive your responses.');
+        onClose();
+      } else {
+        throw new Error('Submission failed');
+      }
+    } catch (error) {
+      console.error('Submit failed:', error);
+      alert('❌ Submission failed. Please try downloading the JSON file instead.');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   if (!isOpen) return null;
 
   const totalQuestions = Object.keys(responses).length;
@@ -77,11 +105,11 @@ export default function ExportDialog({ isOpen, onClose, responses, userEmail }: 
           </div>
           
           <h2 className="text-xl font-bold text-center text-gray-900 mb-2">
-            Ready to Export!
+            Submit Your Responses
           </h2>
           
           <p className="text-center text-gray-600 mb-6">
-            Your responses have been saved and are ready for download.
+            Submit directly to Arnav or download a backup copy.
           </p>
 
           {/* Stats */}
@@ -107,10 +135,30 @@ export default function ExportDialog({ isOpen, onClose, responses, userEmail }: 
           <div className="flex space-x-3">
             <button
               onClick={onClose}
-              disabled={isExporting}
-              className="flex-1 px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300 disabled:opacity-50 transition-colors"
+              disabled={isExporting || isSubmitting}
+              className="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300 disabled:opacity-50 transition-colors"
             >
               Close
+            </button>
+            
+            <button
+              onClick={handleSubmit}
+              disabled={isSubmitting || isExporting}
+              className="px-6 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center"
+            >
+              {isSubmitting ? (
+                <>
+                  <div className="w-4 h-4 border-2 border-white rounded-full animate-spin border-t-transparent mr-2"></div>
+                  Submitting...
+                </>
+              ) : (
+                <>
+                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                  </svg>
+                  Submit to Arnav
+                </>
+              )}
             </button>
             
             <button

@@ -11,13 +11,12 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'No responses provided' }, { status: 400 });
     }
 
-    // Log the data for server logs (you can see this in Vercel Function logs)
+    // Log progress save (basic info only for performance)
     console.log('Saving progress:', {
       timestamp: new Date().toISOString(),
       userEmail: userEmail || 'anonymous',
       responseCount: Object.keys(responses).length,
-      isAutoSave,
-      fullData: responses // This logs the actual responses
+      isAutoSave
     });
 
     // Simulate a small delay for realistic feel

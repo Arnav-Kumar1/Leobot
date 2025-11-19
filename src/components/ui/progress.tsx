@@ -1,6 +1,11 @@
 import React from 'react';
 
-const Progress = ({ currentSection, totalSections }) => {
+interface ProgressProps {
+  currentSection: number;
+  totalSections: number;
+}
+
+const Progress = ({ currentSection, totalSections }: ProgressProps) => {
   const progressPercentage = ((currentSection / totalSections) * 100).toFixed(2);
 
   return (

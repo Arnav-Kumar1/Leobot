@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "Mindclone Data Intake from LEO HYDRA",
-    "description": "To create an accurate digital twin, this model requires high-resolution data. Please answer with more details and raw honesty. \n\n✅ NOTE: Your progress is automatically saved every 10 seconds.",
+    "description": "To create an accurate digital twin, this model requires deep, detailed responses. Take your time - quality matters more than speed. Be thoughtful and thorough in your answers, sharing authentic details rather than surface-level responses.\n\n✅ Your progress saves automatically every 10 seconds - you can leave anytime and return later to continue exactly where you left off.",
     "settings": {
       "show_progress_bar": true,
       "allow_save_and_resume": true,

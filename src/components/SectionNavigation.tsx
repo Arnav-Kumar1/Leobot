@@ -44,7 +44,7 @@ export default function SectionNavigation({
 
   return (
     <div className="bg-white rounded-lg shadow-sm p-6 mb-6">
-      <h3 className="font-semibold text-gray-900 mb-4 text-center">Choose Any Section to Start</h3>
+      <h3 className="font-semibold text-gray-900 mb-4 text-center">Choose Any Section to Start Filling</h3>
       
       {/* Horizontal scrollable section grid */}
       <div className="overflow-x-auto pb-2">

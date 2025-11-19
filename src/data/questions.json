@@ -1,0 +1,808 @@
+{
+  "meta": {
+    "title": "Mindclone Data Intake: Executive & Artist Profile",
+    "description": "To create an accurate digital twin, this model requires high-resolution data. Please answer with raw honesty rather than 'public-facing' polish. \n\n⚠️ NOTE: You can save your progress at any time.",
+    "settings": {
+      "show_progress_bar": true,
+      "allow_save_and_resume": true,
+      "collect_email": true
+    }
+  },
+  "sections": [
+    {
+      "id": "sec_beliefs",
+      "title": "Belief Systems",
+      "questions": [
+        {
+          "id": "q_principles",
+          "text": "What ideas or principles do you live by no matter what?",
+          "hint": "Non-negotiables.",
+          "example_good": "Radical transparency. If I screw up, I own it immediately.",
+          "example_bad": "Integrity and Synergy."
+        },
+        {
+          "id": "q_misunderstood",
+          "text": "What do you believe most people misunderstand about life or business?",
+          "hint": "Your contrarian truth.",
+          "example_good": "People think comfort is happiness, but I believe satisfaction only comes from solving hard problems.",
+          "example_bad": "Hard work pays off."
+        },
+        {
+          "id": "q_fate_luck",
+          "text": "What’s your view on fate, effort, or luck in shaping outcomes?",
+          "hint": "Locus of control.",
+          "example_good": "Luck provides the opportunity, but execution is entirely on us.",
+          "example_bad": "Everything happens for a reason."
+        }
+      ]
+    },
+    {
+      "id": "sec_passions",
+      "title": "Passions & Obsessions",
+      "questions": [
+        {
+          "id": "q_obsessions",
+          "text": "What are you obsessed with or endlessly drawn toward?",
+          "hint": "Research topics you do in your free time.",
+          "example_good": "Supply chain logistics and mechanical watches.",
+          "example_bad": "Reading and innovation."
+        },
+        {
+          "id": "q_boredom",
+          "text": "What subjects or activities do you never get bored of?",
+          "hint": "Infinite energy sources.",
+          "example_good": "Debugging complex org charts or painting textures.",
+          "example_bad": "My job."
+        },
+        {
+          "id": "q_motivation",
+          "text": "What motivates you when you feel uninspired?",
+          "hint": "Emergency fuel source.",
+          "example_good": "Proving the skeptics wrong. Competitive spite.",
+          "example_bad": "Success."
+        }
+      ]
+    },
+    {
+      "id": "sec_art_identity",
+      "title": "Artistic Identity & Social Persona",
+      "questions": [
+        {
+          "id": "q_art_emotion",
+          "text": "When people look at your art, what specific emotion do you want them to feel?",
+          "hint": "Brand vibe.",
+          "example_good": "I want them to feel a sense of organized chaos and calm melancholy.",
+          "example_bad": "Happy."
+        },
+        {
+          "id": "q_creative_process",
+          "text": "How do you describe your creative process to a potential buyer?",
+          "hint": "The romance of the craft.",
+          "example_good": "I start without a plan, layering paint until a structure emerges from the noise.",
+          "example_bad": "I just paint what I see."
+        },
+        {
+          "id": "q_social_persona",
+          "text": "For your Social Media Persona, are you the 'Teacher', the 'Philosopher', or the 'Visual Diarist'?",
+          "hint": "Content strategy.",
+          "example_good": "The Philosopher. I want to use art to talk about business lessons.",
+          "example_bad": "Just showing my art."
+        },
+        {
+          "id": "q_art_hook",
+          "text": "What is the 'Hook' that makes your art different?",
+          "hint": "USP (Unique Selling Proposition).",
+          "example_good": "I only use palette knives, never brushes, so the texture is aggressive.",
+          "example_bad": "It looks cool."
+        }
+      ]
+    },
+    {
+      "id": "sec_likes",
+      "title": "Likes",
+      "questions": [
+        {
+          "id": "q_likes_sensory",
+          "text": "List things, environments, or habits you genuinely enjoy?",
+          "hint": "Focus on sensory details.",
+          "example_good": "A pristine whiteboard, cold conference rooms, and high-quality espresso.",
+          "example_bad": "A nice office."
+        },
+        {
+          "id": "q_likes_people",
+          "text": "What kinds of people make you feel energized or understood?",
+          "hint": "Social compatibility.",
+          "example_good": "People who speak fast, bring data, and skip the small talk.",
+          "example_bad": "Smart people."
+        },
+        {
+          "id": "q_likes_mood",
+          "text": "What details instantly put you in a good mood?",
+          "hint": "Positive reinforcement triggers.",
+          "example_good": "When a meeting ends 5 minutes early or a perfectly formatted spreadsheet.",
+          "example_bad": "Winning."
+        }
+      ]
+    },
+    {
+      "id": "sec_dislikes",
+      "title": "Dislikes / Hates / Irritants",
+      "questions": [
+        {
+          "id": "q_irritants",
+          "text": "What behaviors, people, or situations irritate you instantly?",
+          "hint": "Friction points.",
+          "example_good": "People who ask questions that could be Googled in 5 seconds.",
+          "example_bad": "Incompetence."
+        },
+        {
+          "id": "q_intolerance",
+          "text": "What kinds of environments or habits you can’t tolerate?",
+          "hint": "Environmental boundaries.",
+          "example_good": "Cluttered desks, ambient noise, and vague agendas.",
+          "example_bad": "Bad vibes."
+        },
+        {
+          "id": "q_respect_loss",
+          "text": "What instantly makes you lose respect for someone?",
+          "hint": "Moral hierarchy.",
+          "example_good": "Blaming subordinates for a leadership failure.",
+          "example_bad": "Being mean."
+        }
+      ]
+    },
+    {
+      "id": "sec_experiences",
+      "title": "Experiences That Made an Impact",
+      "questions": [
+        {
+          "id": "q_life_events",
+          "text": "Describe a few life events that permanently changed how you think",
+          "hint": "Before/After moments.",
+          "example_good": "The 2008 crash; it taught me that cash flow is oxygen.",
+          "example_bad": "College."
+        },
+        {
+          "id": "q_lessons",
+          "text": "What did each one teach you?",
+          "hint": "Cause and effect reasoning.",
+          "example_good": "I learned that loyalty is a two-way street, not an entitlement.",
+          "example_bad": "I learned to be strong."
+        },
+        {
+          "id": "q_hardships",
+          "text": "Which hardships or turning points built your mindset?",
+          "hint": "Scars and biases.",
+          "example_good": "Navigating a hostile takeover taught me to keep emotion out of negotiation.",
+          "example_bad": "Hard times."
+        }
+      ]
+    },
+    {
+      "id": "sec_strive",
+      "title": "What I Will Always Strive to Achieve",
+      "questions": [
+        {
+          "id": "q_daily_goal",
+          "text": "What do you wake up every day trying to achieve or maintain?",
+          "hint": "Daily operational goal.",
+          "example_good": "Operational clarity and zero inbox.",
+          "example_bad": "To be happy."
+        },
+        {
+          "id": "q_standard",
+          "text": "What personal standard or mission will you never compromise on?",
+          "hint": "Standard of care.",
+          "example_good": "I will never ship a product I haven't personally tested.",
+          "example_bad": "Quality."
+        },
+        {
+          "id": "q_success_def",
+          "text": "How do you define true success for yourself?",
+          "hint": "Personal metric.",
+          "example_good": "Total autonomy over my calendar.",
+          "example_bad": "Being rich."
+        }
+      ]
+    },
+    {
+      "id": "sec_agitated",
+      "title": "Agitated Versions of Me",
+      "questions": [
+        {
+          "id": "q_triggers",
+          "text": "What behaviors or words trigger your agitation fastest?",
+          "hint": "Red buttons.",
+          "example_good": "Being told 'it is what it is' when there is a solution available.",
+          "example_bad": "Stupidity."
+        },
+        {
+          "id": "q_stress_tone",
+          "text": "How does your tone, vocabulary, or patience change when angry or stressed?",
+          "hint": "Syntax of displeasure.",
+          "example_good": "I go icy cold, very polite, and use shorter, clipped sentences.",
+          "example_bad": "I get mad."
+        },
+        {
+          "id": "q_calm_down_time",
+          "text": "How long does it take for you to calm down?",
+          "hint": "Refractory period.",
+          "example_good": "I need 20 minutes of silence, then I reset.",
+          "example_bad": "A while."
+        }
+      ]
+    },
+    {
+      "id": "sec_calm",
+      "title": "Calm / Reflective Versions of Me",
+      "questions": [
+        {
+          "id": "q_relaxed_voice",
+          "text": "How do you sound when relaxed or thoughtful?",
+          "hint": "Mentoring voice.",
+          "example_good": "I use more analogies, lean back, and speak slower.",
+          "example_bad": "Normal."
+        },
+        {
+          "id": "q_composure",
+          "text": "What helps you regain composure after tension?",
+          "hint": "Reset mechanism.",
+          "example_good": "Walking outside or reviewing the raw data alone.",
+          "example_bad": "Rest."
+        },
+        {
+          "id": "q_sanctuary",
+          "text": "What situations bring out your calmest self?",
+          "hint": "Sanctuary.",
+          "example_good": "Drafting strategy documents early in the morning.",
+          "example_bad": "When I am alone."
+        }
+      ]
+    },
+    {
+      "id": "sec_tone",
+      "title": "Tone of Voice",
+      "questions": [
+        {
+          "id": "q_usual_tone",
+          "text": "Describe your usual tone when speaking or writing.",
+          "hint": "Baseline persona.",
+          "example_good": "Direct, authoritative, but slightly informal.",
+          "example_bad": "Nice."
+        },
+        {
+          "id": "q_instruction_vs_opinion",
+          "text": "How does it shift when giving instructions vs sharing opinions?",
+          "hint": "Command Mode vs. Chat Mode.",
+          "example_good": "Instructions are bullet points and sterile. Opinions are wandering and colorful.",
+          "example_bad": "It changes."
+        },
+        {
+          "id": "q_tone_keywords",
+          "text": "Pick the words that fit best: blunt / poetic / motivational / sarcastic / analytical / emotional / other.",
+          "hint": "System prompts.",
+          "example_good": "Analytical, Sarcastic, Blunt.",
+          "example_bad": "All of them."
+        }
+      ]
+    },
+    {
+      "id": "sec_vocab",
+      "title": "Vocabulary & Slang",
+      "questions": [
+        {
+          "id": "q_signature_words",
+          "text": "What specific words, slang, or phrases are distinctly yours?",
+          "hint": "Signature phrases.",
+          "example_good": "'Let's pressure test this', 'Wild', 'Optimization', '100%'.",
+          "example_bad": "LOL."
+        },
+        {
+          "id": "q_hated_words",
+          "text": "Which words do you dislike or refuse to use because they sound fake?",
+          "hint": "Corporate buzzwords.",
+          "example_good": "Synergy, Circle back, Think outside the box.",
+          "example_bad": "Bad words."
+        },
+        {
+          "id": "q_addressing_people",
+          "text": "How do you usually refer to people (mate, dude, nothing, etc.)?",
+          "hint": "Intimacy level.",
+          "example_good": "I usually just use their first name, or 'Team' for a group.",
+          "example_bad": "Hey."
+        }
+      ]
+    },
+    {
+      "id": "sec_humour",
+      "title": "Humour Usage",
+      "questions": [
+        {
+          "id": "q_humour_style",
+          "text": "What kind of humour feels natural to you?",
+          "hint": "Wit vs. Slapstick.",
+          "example_good": "Dry, cynical wit. Understated irony.",
+          "example_bad": "Funny stuff."
+        },
+        {
+          "id": "q_humour_dislike",
+          "text": "What kind of jokes or humour irritate you?",
+          "hint": "Annoyances.",
+          "example_good": "Slapstick, loud pranks, or self-deprecating humor.",
+          "example_bad": "Not funny jokes."
+        },
+        {
+          "id": "q_humour_intent",
+          "text": "Do you use humour as connection, defence, or commentary?",
+          "hint": "Intent.",
+          "example_good": "I use it to defuse tension in high-stakes meetings.",
+          "example_bad": "To laugh."
+        }
+      ]
+    },
+    {
+      "id": "sec_references",
+      "title": "References",
+      "questions": [
+        {
+          "id": "q_influences",
+          "text": "Which artists, thinkers, cultures, or movements you often refer to?",
+          "hint": "Intellectual ecosystem.",
+          "example_good": "Stoicism, Game Theory, Naval Ravikant, Bauhaus design.",
+          "example_bad": "Pop culture."
+        },
+        {
+          "id": "q_resonance",
+          "text": "What about them resonates with you?",
+          "hint": "The common thread.",
+          "example_good": "The focus on minimalism and function over form.",
+          "example_bad": "They are cool."
+        },
+        {
+          "id": "q_architect",
+          "text": "Who or what shaped your way of thinking most?",
+          "hint": "The architect.",
+          "example_good": "My first mentor who taught me to measure twice, cut once.",
+          "example_bad": "School."
+        }
+      ]
+    },
+    {
+      "id": "sec_actions",
+      "title": "Beliefs → Actions Bridge",
+      "questions": [
+        {
+          "id": "q_beliefs_daily",
+          "text": "How do your belief systems show up in daily decisions?",
+          "hint": "Theory vs Practice.",
+          "example_good": "I believe in speed, so I approve budgets under $1k without review.",
+          "example_bad": "I try to be fast."
+        },
+        {
+          "id": "q_values_conflict",
+          "text": "When values conflict with convenience, which wins?",
+          "hint": "Integrity test.",
+          "example_good": "Convenience usually wins on small things, but values win on client work.",
+          "example_bad": "Values."
+        }
+      ]
+    },
+    {
+      "id": "sec_emotions",
+      "title": "Emotional Blueprint",
+      "questions": [
+        {
+          "id": "q_dominant_emotion",
+          "text": "Which emotions dominate your decisions?",
+          "hint": "Emotional default.",
+          "example_good": "Productive paranoia about the competition.",
+          "example_bad": "Thinking."
+        },
+        {
+          "id": "q_process_emotion",
+          "text": "How do you process anger, fear, or excitement?",
+          "hint": "Output volatility.",
+          "example_good": "I bottle up anger until I have a plan; I share excitement immediately.",
+          "example_bad": "I deal with it."
+        },
+        {
+          "id": "q_hardest_emotion",
+          "text": "What emotion is hardest for you to express?",
+          "hint": "Blind spot.",
+          "example_good": "Admitting I am overwhelmed.",
+          "example_bad": "None."
+        }
+      ]
+    },
+    {
+      "id": "sec_purpose",
+      "title": "Purpose & Drives",
+      "questions": [
+        {
+          "id": "q_motivation_bedrock",
+          "text": "What keeps you motivated when nothing’s working?",
+          "hint": "Bedrock motivation.",
+          "example_good": "The fear of mediocrity.",
+          "example_bad": "Hope."
+        },
+        {
+          "id": "q_intrinsic_drive",
+          "text": "What do you chase even when nobody notices?",
+          "hint": "Intrinsic drive.",
+          "example_good": "Perfecting the internal logic of our strategy docs.",
+          "example_bad": "Good work."
+        },
+        {
+          "id": "q_legacy",
+          "text": "What kind of legacy matters to you?",
+          "hint": "North Star.",
+          "example_good": "That I built systems that outlasted me.",
+          "example_bad": "To be remembered."
+        }
+      ]
+    },
+    {
+      "id": "sec_creative",
+      "title": "Creative Process",
+      "questions": [
+        {
+          "id": "q_idea_formation",
+          "text": "How do ideas form for you?",
+          "hint": "Origin story.",
+          "example_good": "I have to talk it out loud (whiteboarding); I can't think in silence.",
+          "example_bad": "I think of them."
+        },
+        {
+          "id": "q_creativity_killers",
+          "text": "What kills creativity instantly?",
+          "hint": "Blockers.",
+          "example_good": "Micromanagement and artificial deadlines.",
+          "example_bad": "Stress."
+        },
+        {
+          "id": "q_environment_trigger",
+          "text": "What environment triggers your best work?",
+          "hint": "Ideal conditions.",
+          "example_good": "A busy airport lounge with noise-canceling headphones.",
+          "example_bad": "My office."
+        }
+      ]
+    },
+    {
+      "id": "sec_communication",
+      "title": "Communication Style",
+      "questions": [
+        {
+          "id": "q_explanation_style",
+          "text": "Do you prefer long explanations or direct lines?",
+          "hint": "Verbosity settings.",
+          "example_good": "Give me the headline first, then the details if I ask.",
+          "example_bad": "Depends."
+        },
+        {
+          "id": "q_formality",
+          "text": "How formal or casual are you naturally?",
+          "hint": "Temperature.",
+          "example_good": "Professional but approachable. Smart casual.",
+          "example_bad": "Casual."
+        },
+        {
+          "id": "q_listening_expectation",
+          "text": "What kind of listener do you expect others to be?",
+          "hint": "Expectations.",
+          "example_good": "Active listener. Challenge my assumptions, don't just nod.",
+          "example_bad": "Good listener."
+        }
+      ]
+    },
+    {
+      "id": "sec_decision",
+      "title": "Decision-Making",
+      "questions": [
+        {
+          "id": "q_decision_process",
+          "text": "What process do you follow before deciding?",
+          "hint": "Algorithm.",
+          "example_good": "I gather data for 3 days, sleep on it, then decide instantly.",
+          "example_bad": "I think about it."
+        },
+        {
+          "id": "q_logic_vs_gut",
+          "text": "Do you rely more on logic, gut, or emotion?",
+          "hint": "Weighting.",
+          "example_good": "80% data, but if my gut says no, I walk.",
+          "example_bad": "Logic."
+        },
+        {
+          "id": "q_change_mind",
+          "text": "What makes you change your mind once decided?",
+          "hint": "Pivot point.",
+          "example_good": "New, contradictory data presented respectfully.",
+          "example_bad": "Nothing."
+        }
+      ]
+    },
+    {
+      "id": "sec_learning",
+      "title": "Learning & Curiosity",
+      "questions": [
+        {
+          "id": "q_learning_method",
+          "text": "How do you learn new things?",
+          "hint": "Method.",
+          "example_good": "I need to break it first to understand how it works.",
+          "example_bad": "Reading."
+        },
+        {
+          "id": "q_fascinations",
+          "text": "What topics fascinate you endlessly?",
+          "hint": "Rabbit holes.",
+          "example_good": "Evolutionary biology and asymmetric warfare.",
+          "example_bad": "Science."
+        },
+        {
+          "id": "q_distrust",
+          "text": "What kind of information do you distrust?",
+          "hint": "Skepticism filter.",
+          "example_good": "Consultant reports with no raw data attached.",
+          "example_bad": "Fake news."
+        }
+      ]
+    },
+    {
+      "id": "sec_boundaries",
+      "title": "Boundaries & Triggers",
+      "questions": [
+        {
+          "id": "q_avoid_topics",
+          "text": "What topics you avoid discussing?",
+          "hint": "No-fly zone.",
+          "example_good": "Personal finances and office gossip.",
+          "example_bad": "Private stuff."
+        },
+        {
+          "id": "q_debate_topics",
+          "text": "What topics you love debating?",
+          "hint": "The arena.",
+          "example_good": "The future of our industry and macroeconomics.",
+          "example_bad": "Everything."
+        },
+        {
+          "id": "q_shutdown_trigger",
+          "text": "What instantly shuts you down in conversation?",
+          "hint": "The silencer.",
+          "example_good": "Being interrupted constantly or obvious flattery.",
+          "example_bad": "Annoying people."
+        }
+      ]
+    },
+    {
+      "id": "sec_people",
+      "title": "Beliefs About People",
+      "questions": [
+        {
+          "id": "q_respect",
+          "text": "What kind of people do you respect instantly?",
+          "hint": "Characters.",
+          "example_good": "Self-made people who don't brag about it.",
+          "example_bad": "Nice people."
+        },
+        {
+          "id": "q_confusion",
+          "text": "What human behaviors confuse or frustrate you?",
+          "hint": "Alien concepts.",
+          "example_good": "Passive aggression. I prefer direct conflict over hidden agendas.",
+          "example_bad": "Lying."
+        },
+        {
+          "id": "q_human_nature",
+          "text": "How do you see human nature overall—optimistic or skeptical?",
+          "hint": "Worldview.",
+          "example_good": "Trust, but verify. Optimistic but cautious.",
+          "example_bad": "Good."
+        }
+      ]
+    },
+    {
+      "id": "sec_ai_rules",
+      "title": "My Language Rules for AI",
+      "questions": [
+        {
+          "id": "q_ai_tone",
+          "text": "What tone must your AI version always keep?",
+          "hint": "Prime directive.",
+          "example_good": "Helpful, but slightly detached. Do not be overly eager.",
+          "example_bad": "Be me."
+        },
+        {
+          "id": "q_ai_blacklist",
+          "text": "What words or attitudes must it never use?",
+          "hint": "Blacklist.",
+          "example_good": "Never use emojis, never apologize profusely.",
+          "example_bad": "Don't be annoying."
+        },
+        {
+          "id": "q_ai_impact",
+          "text": "What reaction do you want readers or listeners to feel from your voice?",
+          "hint": "User Experience (UX).",
+          "example_good": "I want them to feel challenged but supported.",
+          "example_bad": "Good."
+        }
+      ]
+    },
+    {
+      "id": "sec_influences",
+      "title": "Influences & Mentors",
+      "questions": [
+        {
+          "id": "q_mentors",
+          "text": "Who taught you key life lessons?",
+          "hint": "Archetypes.",
+          "example_good": "My first boss at [Company] and Marcus Aurelius.",
+          "example_bad": "My parents."
+        },
+        {
+          "id": "q_admire_differ",
+          "text": "Which personalities do you admire but still differ from?",
+          "hint": "Nuance.",
+          "example_good": "I admire Elon Musk's drive, but I reject the chaos.",
+          "example_bad": "Famous people."
+        }
+      ]
+    },
+    {
+      "id": "sec_work_habits",
+      "title": "Work Habits & Discipline",
+      "questions": [
+        {
+          "id": "q_day_org",
+          "text": "How do you organize your day?",
+          "hint": "Schedule psychology.",
+          "example_good": "Rigid deep work blocks in the morning, open meetings in the afternoon.",
+          "example_bad": "With a list."
+        },
+        {
+          "id": "q_definition_of_done",
+          "text": "How do you know when something’s “done”?",
+          "hint": "Quality threshold.",
+          "example_good": "When I am no longer embarrassed to show it to a client.",
+          "example_bad": "When it's finished."
+        },
+        {
+          "id": "q_boredom_coping",
+          "text": "How do you handle boredom or fatigue?",
+          "hint": "Coping strategy.",
+          "example_good": "I switch tasks to something low-stakes, like clearing email.",
+          "example_bad": "I stop."
+        }
+      ]
+    },
+    {
+      "id": "sec_stress",
+      "title": "Stress & Recovery",
+      "questions": [
+        {
+          "id": "q_burnout_signs",
+          "text": "When overwhelmed, what collapses first—focus, empathy, or patience?",
+          "hint": "Failure mode.",
+          "example_good": "Empathy goes first. I become transactional.",
+          "example_bad": "Everything."
+        },
+        {
+          "id": "q_reset_mechanism",
+          "text": "What’s the fastest way you reset yourself?",
+          "hint": "Emergency brake.",
+          "example_good": "A walk outside without my phone.",
+          "example_bad": "Sleep."
+        }
+      ]
+    },
+    {
+      "id": "sec_values",
+      "title": "Values & Principles",
+      "questions": [
+        {
+          "id": "q_value_rank",
+          "text": "Rank the most important values in your life.",
+          "hint": "Hierarchy.",
+          "example_good": "1. Freedom, 2. Competence, 3. Honesty.",
+          "example_bad": "Love and peace."
+        },
+        {
+          "id": "q_value_absolute",
+          "text": "Which one would you never compromise?",
+          "hint": "Absolute zero.",
+          "example_good": "I will never compromise my reputation for short-term profit.",
+          "example_bad": "All of them."
+        }
+      ]
+    },
+    {
+      "id": "sec_legacy",
+      "title": "Legacy",
+      "questions": [
+        {
+          "id": "q_remembered_for",
+          "text": "What should people remember you for?",
+          "hint": "Eulogy.",
+          "example_good": "He was demanding, but he made us better.",
+          "example_bad": "Being a good guy."
+        },
+        {
+          "id": "q_work_message",
+          "text": "What message should your work communicate even after you’re gone?",
+          "hint": "Vibe.",
+          "example_good": "That quality is the only business plan that matters.",
+          "example_bad": "Success."
+        }
+      ]
+    },
+    {
+      "id": "sec_vocab_modes",
+      "title": "Vocabulary for Agitated / Calm / Humorous Modes",
+      "questions": [
+        {
+          "id": "q_agitated_vocab",
+          "text": "What specific words or phrases do you catch yourself using when agitated?",
+          "hint": "The tell.",
+          "example_good": "'Seriously?', 'Let's be clear', 'Fine.'",
+          "example_bad": "Swear words."
+        },
+        {
+          "id": "q_calm_vocab",
+          "text": "What words appear when you’re calm or reflective?",
+          "hint": "Slow down.",
+          "example_good": "'Interestingly,' 'Perhaps,' 'The nuance here is...'",
+          "example_bad": "Calm words."
+        },
+        {
+          "id": "q_humorous_vocab",
+          "text": "What expressions do you use for humour?",
+          "hint": "Delivery.",
+          "example_good": "'Asking for a friend...', 'Imagine if...'",
+          "example_bad": "Funny stuff."
+        }
+      ]
+    },
+    {
+      "id": "sec_judgment",
+      "title": "What Shapes My Judgments",
+      "questions": [
+        {
+          "id": "q_eval_criteria",
+          "text": "When evaluating people or ideas, what criteria matter most?",
+          "hint": "Grading rubric.",
+          "example_good": "Utility and elegance. Is it useful? Is it simple?",
+          "example_bad": "If it's good."
+        },
+        {
+          "id": "q_logic_fallacy",
+          "text": "What kinds of reasoning do you distrust?",
+          "hint": "Fallacies.",
+          "example_good": "Appeal to authority. 'Because X said so' means nothing.",
+          "example_bad": "Stupid logic."
+        }
+      ]
+    },
+    {
+      "id": "sec_final",
+      "title": "Final Thoughts",
+      "questions": [
+        {
+          "id": "q_core_memory",
+          "text": "What should this AI version never forget about you?",
+          "hint": "Core kernel.",
+          "example_good": "That despite my tough exterior, I care deeply about the team's growth.",
+          "example_bad": "My name."
+        },
+        {
+          "id": "q_missing_question",
+          "text": "What question should have been asked but wasn’t?",
+          "hint": "Missing piece.",
+          "example_good": "You didn't ask about my relationship with failure.",
+          "example_bad": "Nothing."
+        }
+      ]
+    }
+  ]
+}

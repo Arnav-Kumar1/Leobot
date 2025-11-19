@@ -11,7 +11,6 @@ interface ExportDialogProps {
 
 export default function ExportDialog({ isOpen, onClose, responses, userEmail }: ExportDialogProps) {
   const [isExporting, setIsExporting] = useState(false);
-  const [isEmailing, setIsEmailing] = useState(false);
 
   // Helper function to find question details from questions data
   const findQuestionById = (questionId: string) => {
@@ -20,16 +19,14 @@ export default function ExportDialog({ isOpen, onClose, responses, userEmail }: 
         if (question.id === questionId) {
           return {
             question: question.text,
-            section: section.title,
-            category: section.category || section.title
+            section: section.title
           };
         }
       }
     }
     return {
       question: questionId.replace(/_/g, ' ').replace(/^q_/, ''),
-      section: 'Unknown',
-      category: 'General'
+      section: 'Unknown'
     };
   };
 
@@ -52,7 +49,7 @@ export default function ExportDialog({ isOpen, onClose, responses, userEmail }: 
             return {
               question: questionData?.question || questionId,
               answer: answer.trim(),
-              category: questionData?.section || 'General'
+              section: questionData?.section || 'General'
             };
           }),
           
@@ -99,59 +96,7 @@ export default function ExportDialog({ isOpen, onClose, responses, userEmail }: 
     }
   };
 
-  const handleEmailToArnav = async () => {
-    setIsEmailing(true);
-    
-    try {
-      // Clean export data for mindclone training
-      const exportData = {
-        timestamp: new Date().toISOString(),
-        userEmail: userEmail || 'anonymous',
-        totalResponses: Object.keys(responses).length,
-        completionRate: `${Math.round((Object.values(responses).filter(r => r?.trim()).length / Object.keys(responses).length) * 100)}%`,
-        
-        // Clean Q&A pairs for AI training
-        trainingData: Object.entries(responses)
-          .filter(([_, answer]) => answer?.trim())
-          .map(([questionId, answer]) => {
-            const questionData = findQuestionById(questionId);
-            return {
-              question: questionData?.question || questionId,
-              answer: answer.trim(),
-              category: questionData?.section || 'General'
-            };
-          }),
-          
-        // Raw data (for reference)
-        rawResponses: responses,
-          
-        metadata: {
-          exportedAt: new Date().toISOString(),
-          version: '3.0',
-          source: 'Mindclone Data Intake',
-          purpose: 'AI Personality Clone Training Data'
-        }
-      };
-      
 
-
-      const emailBody = `Mindclone Data Collection Results\\n\\nTimestamp: ${exportData.timestamp}\\nUser: ${exportData.userEmail}\\nTotal Responses: ${exportData.totalResponses}\\nCompletion Rate: ${exportData.completionRate}\\n\\nPlease find the complete data in JSON format below:\\n\\n${JSON.stringify(exportData, null, 2)}`;
-      
-      const subject = `Mindclone Data from ${exportData.userEmail} - ${new Date().toLocaleDateString()}`;
-      const mailtoLink = `mailto:arnav9637@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;
-      
-      // Open email client
-      window.open(mailtoLink, '_blank');
-      
-      alert('✅ Email client opened! Please send the email to complete the submission.');
-      onClose();
-    } catch (error) {
-      console.error('Email failed:', error);
-      alert('❌ Failed to open email client. Please try downloading the JSON file instead.');
-    } finally {
-      setIsEmailing(false);
-    }
-  };
 
   if (!isOpen) return null;
 
@@ -174,7 +119,7 @@ export default function ExportDialog({ isOpen, onClose, responses, userEmail }: 
           </h2>
           
           <p className="text-center text-gray-600 mb-6">
-            Email your responses to Arnav or download a backup copy.
+            Download your responses and email the JSON file to arnav9637@gmail.com
           </p>
 
           {/* Stats */}
@@ -197,39 +142,32 @@ export default function ExportDialog({ isOpen, onClose, responses, userEmail }: 
             </div>
           )}
 
+          {/* Email Instructions */}
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">
+            <div className="flex items-center mb-2">
+              <svg className="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span className="font-semibold text-blue-800">Next Step:</span>
+            </div>
+            <p className="text-blue-700 text-sm">
+              After downloading, please email the JSON file to: <span className="font-mono bg-blue-100 px-1 rounded">arnav9637@gmail.com</span>
+            </p>
+          </div>
+
           <div className="flex space-x-3">
             <button
               onClick={onClose}
-              disabled={isExporting || isEmailing}
+              disabled={isExporting}
               className="px-4 py-2 text-gray-700 bg-gray-200 rounded-md hover:bg-gray-300 disabled:opacity-50 transition-colors"
             >
               Close
             </button>
             
             <button
-              onClick={handleEmailToArnav}
-              disabled={isEmailing || isExporting}
-              className="px-6 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 disabled:opacity-50 disabled:cursor-not-allowed transition-colors flex items-center"
-            >
-              {isEmailing ? (
-                <>
-                  <div className="w-4 h-4 border-2 border-white rounded-full animate-spin border-t-transparent mr-2"></div>
-                  Opening Email...
-                </>
-              ) : (
-                <>
-                  <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                  </svg>
-                  Email to Arnav
-                </>
-              )}
-            </button>
-            
-            <button
               onClick={handleExport}
               disabled={isExporting}
-              className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 disabled:opacity-50 transition-colors flex items-center justify-center"
+              className="flex-1 px-6 py-2 bg-green-600 text-white rounded-md hover:bg-green-700 disabled:opacity-50 transition-colors flex items-center justify-center"
             >
               {isExporting ? (
                 <>

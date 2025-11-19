@@ -1,9 +1,11 @@
 import { NextResponse } from 'next/server';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: Request) {
   try {
-    const { searchParams } = new URL(request.url);
-    const userEmail = searchParams.get('userEmail');
+    const url = new URL(request.url);
+    const userEmail = url.searchParams.get('userEmail');
 
     if (!userEmail) {
       return NextResponse.json({ error: 'User email is required' }, { status: 400 });

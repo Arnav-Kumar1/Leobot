@@ -104,13 +104,6 @@
           "example_bad": "I just paint what I see."
         },
         {
-          "id": "q_social_persona",
-          "text": "For your Social Media Persona, are you the 'Teacher', the 'Philosopher', or the 'Visual Diarist'?",
-          "hint": "Content strategy.",
-          "example_good": "The Philosopher. I want to use art to talk about business lessons.",
-          "example_bad": "Just showing my art."
-        },
-        {
           "id": "q_art_hook",
           "text": "What is the 'Hook' that makes your art different?",
           "hint": "USP (Unique Selling Proposition).",

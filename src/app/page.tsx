@@ -158,7 +158,7 @@ export default function Page() {
             <span className="font-semibold text-blue-800">Export Information</span>
           </div>
           <p className="text-blue-700 text-sm">
-            The <strong>"Complete & Export"</strong> button will appear at the end of the final section once all questions are answered. You can fill out sections in any order using the section grid above.
+            The <strong>"Complete & Export"</strong> button will appear at the end of the final section once all questions are answered. You can fill out sections in any order using the section grid below.
           </p>
         </div>
 

@@ -19,7 +19,7 @@ export default function ExportDialog({ isOpen, onClose, responses, userEmail }: 
       for (const question of section.questions) {
         if (question.id === questionId) {
           return {
-            question: question.question,
+            question: question.text,
             section: section.title,
             category: section.category || section.title
           };

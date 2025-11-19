@@ -34,12 +34,16 @@ export default function ExportDialog({ isOpen, onClose, responses, userEmail }: 
     setIsExporting(true);
     
     try {
+      // Calculate total questions from questionsData
+      const totalQuestionsInSurvey = questionsData.sections.reduce((sum, section) => sum + section.questions.length, 0);
+      const answeredQuestions = Object.values(responses).filter(r => r?.trim()).length;
+      
       // Clean export data for mindclone training
       const exportData = {
         timestamp: new Date().toISOString(),
         userEmail: userEmail || 'anonymous',
-        totalResponses: Object.keys(responses).length,
-        completionRate: `${Math.round((Object.values(responses).filter(r => r?.trim()).length / Object.keys(responses).length) * 100)}%`,
+        totalResponses: answeredQuestions,
+        completionRate: `${Math.round((answeredQuestions / totalQuestionsInSurvey) * 100)}%`,
         
         // Clean Q&A pairs for AI training
         trainingData: Object.entries(responses)
@@ -100,7 +104,7 @@ export default function ExportDialog({ isOpen, onClose, responses, userEmail }: 
 
   if (!isOpen) return null;
 
-  const totalQuestions = Object.keys(responses).length;
+  const totalQuestions = questionsData.sections.reduce((sum, section) => sum + section.questions.length, 0);
   const answeredQuestions = Object.values(responses).filter(r => r?.trim()).length;
   const completionRate = totalQuestions > 0 ? Math.round((answeredQuestions / totalQuestions) * 100) : 0;
 

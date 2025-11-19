@@ -6,10 +6,9 @@ interface ExportDialogProps {
   isOpen: boolean;
   onClose: () => void;
   responses: Responses;
-  userEmail: string;
 }
 
-export default function ExportDialog({ isOpen, onClose, responses, userEmail }: ExportDialogProps) {
+export default function ExportDialog({ isOpen, onClose, responses }: ExportDialogProps) {
   const [isExporting, setIsExporting] = useState(false);
 
   // Helper function to find question details from questions data
@@ -41,7 +40,6 @@ export default function ExportDialog({ isOpen, onClose, responses, userEmail }: 
       // Clean export data for mindclone training
       const exportData = {
         timestamp: new Date().toISOString(),
-        userEmail: userEmail || 'anonymous',
         totalResponses: answeredQuestions,
         completionRate: `${Math.round((answeredQuestions / totalQuestionsInSurvey) * 100)}%`,
         
@@ -140,11 +138,7 @@ export default function ExportDialog({ isOpen, onClose, responses, userEmail }: 
             </div>
           </div>
 
-          {userEmail && (
-            <div className="text-sm text-gray-600 text-center mb-4">
-              Linked to: {userEmail}
-            </div>
-          )}
+
 
           {/* Email Instructions */}
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6">

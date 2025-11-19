@@ -15,7 +15,7 @@ export default function Page() {
   const [responses, setResponses] = useLocalStorage<Responses>('mindclone-responses', {});
   const [currentSectionIndex, setCurrentSectionIndex] = useLocalStorage<number>('mindclone-current-section', 0);
   const [isExportDialogOpen, setExportDialogOpen] = useState(false);
-  const [userEmail, setUserEmail] = useLocalStorage<string>('mindclone-email', '');
+
   const [isSaving, setIsSaving] = useState(false);
   const [isHydrated, setIsHydrated] = useState(false);
 
@@ -65,7 +65,6 @@ export default function Page() {
     try {
       const exportData = {
         timestamp: new Date().toISOString(),
-        userEmail,
         responses: formatResponsesForExport(responses),
         completionPercentage: calculateCompletionPercentage()
       };
@@ -133,21 +132,7 @@ export default function Page() {
           </p>
         </div>
 
-        {/* Email Collection */}
-        {questionsData.meta.settings.collect_email && (
-          <div className="mb-6 p-4 bg-white rounded-lg shadow-sm">
-            <label className="block text-sm font-medium text-gray-700 mb-2">
-              Email (optional - to resume progress on other devices)
-            </label>
-            <input
-              type="email"
-              value={userEmail}
-              onChange={(e) => setUserEmail(e.target.value)}
-              className="w-full max-w-md px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              placeholder="your.email@example.com"
-            />
-          </div>
-        )}
+
 
         {/* Export Information Note */}
         <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
@@ -239,7 +224,6 @@ export default function Page() {
             isOpen={isExportDialogOpen}
             onClose={() => setExportDialogOpen(false)}
             responses={responses}
-            userEmail={userEmail}
           />
         )}
       </div>

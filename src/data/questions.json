@@ -5,7 +5,7 @@
     "settings": {
       "show_progress_bar": true,
       "allow_save_and_resume": true,
-      "collect_email": true
+      "collect_email": false
     }
   },
   "sections": [

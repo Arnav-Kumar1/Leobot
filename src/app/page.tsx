@@ -168,16 +168,38 @@ export default function Page() {
             />
           )}
 
-          {/* Export Button */}
+          {/* Navigation Buttons */}
           {isHydrated && (
-            <div className="flex justify-center mt-8 pt-6 border-t">
+            <div className="flex justify-between items-center mt-8 pt-6 border-t">
               <button
-                onClick={handleExport}
-                disabled={isSaving}
-                className="px-8 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 font-medium"
+                onClick={handlePreviousSection}
+                disabled={currentSectionIndex === 0}
+                className="px-6 py-2 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
               >
-                {isSaving ? 'Saving...' : 'Complete & Export'}
+                ← Previous Section
               </button>
+
+              <div className="text-sm text-gray-500 text-center">
+                <div>Section {currentSectionIndex + 1} of {sections.length}</div>
+                <div className="text-xs mt-1">{currentSection.title}</div>
+              </div>
+
+              {currentSectionIndex === sections.length - 1 ? (
+                <button
+                  onClick={handleExport}
+                  disabled={isSaving}
+                  className="px-8 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:opacity-50 font-medium transition-colors"
+                >
+                  {isSaving ? 'Saving...' : 'Complete & Export'}
+                </button>
+              ) : (
+                <button
+                  onClick={handleNextSection}
+                  className="px-6 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors"
+                >
+                  Next Section →
+                </button>
+              )}
             </div>
           )}
         </div>

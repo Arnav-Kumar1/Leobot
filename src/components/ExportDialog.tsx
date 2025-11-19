@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import type { Responses } from '../types';
+import questionsData from '../data/questions.json';
 
 interface ExportDialogProps {
   isOpen: boolean;
@@ -12,23 +13,63 @@ export default function ExportDialog({ isOpen, onClose, responses, userEmail }: 
   const [isExporting, setIsExporting] = useState(false);
   const [isEmailing, setIsEmailing] = useState(false);
 
+  // Helper function to find question details from questions data
+  const findQuestionById = (questionId: string) => {
+    for (const section of questionsData.sections) {
+      for (const question of section.questions) {
+        if (question.id === questionId) {
+          return {
+            question: question.question,
+            section: section.title,
+            category: section.category || section.title
+          };
+        }
+      }
+    }
+    return {
+      question: questionId.replace(/_/g, ' ').replace(/^q_/, ''),
+      section: 'Unknown',
+      category: 'General'
+    };
+  };
+
   const handleExport = async () => {
     setIsExporting(true);
     
     try {
-      // Prepare export data
+      // Prepare comprehensive export data with question context
       const exportData = {
         timestamp: new Date().toISOString(),
         userEmail: userEmail || 'anonymous',
         totalResponses: Object.keys(responses).length,
+        completionRate: `${Math.round((Object.values(responses).filter(r => r?.trim()).length / Object.keys(responses).length) * 100)}%`,
+        
+        // Raw responses (for quick reference)
         responses: responses,
+        
+        // Detailed Q&A pairs with context (for mindclone training)
+        detailedResponses: Object.entries(responses)
+          .filter(([_, answer]) => answer?.trim())
+          .map(([questionId, answer]) => {
+            // Find the question in the data structure
+            const questionData = findQuestionById(questionId);
+            return {
+              questionId,
+              question: questionData?.question || questionId,
+              answer: answer.trim(),
+              section: questionData?.section || 'Unknown',
+              category: questionData?.category || 'General'
+            };
+          }),
+          
         metadata: {
           exportedAt: new Date().toISOString(),
-          version: '1.0',
-          source: 'Mindclone Data Intake'
+          version: '2.0',
+          source: 'Mindclone Data Intake',
+          purpose: 'AI Personality Clone Training Data'
         }
       };
-
+      
       // Create and download JSON file
       const jsonData = JSON.stringify(exportData, null, 2);
       const blob = new Blob([jsonData], { type: 'application/json' });
@@ -65,19 +106,42 @@ export default function ExportDialog({ isOpen, onClose, responses, userEmail }: 
     setIsEmailing(true);
     
     try {
-      // Create email content
+      // Create comprehensive export data with question context
       const exportData = {
         timestamp: new Date().toISOString(),
         userEmail: userEmail || 'anonymous',
         totalResponses: Object.keys(responses).length,
+        completionRate: `${Math.round((Object.values(responses).filter(r => r?.trim()).length / Object.keys(responses).length) * 100)}%`,
+        
+        // Raw responses (for quick reference)
         responses: responses,
+        
+        // Detailed Q&A pairs with context (for mindclone training)
+        detailedResponses: Object.entries(responses)
+          .filter(([_, answer]) => answer?.trim())
+          .map(([questionId, answer]) => {
+            // Find the question in the data structure
+            const questionData = findQuestionById(questionId);
+            return {
+              questionId,
+              question: questionData?.question || questionId,
+              answer: answer.trim(),
+              section: questionData?.section || 'Unknown',
+              category: questionData?.category || 'General'
+            };
+          }),
+          
         metadata: {
           exportedAt: new Date().toISOString(),
-          completionRate: `${Math.round((Object.values(responses).filter(r => r?.trim()).length / Object.keys(responses).length) * 100)}%`
+          version: '2.0',
+          source: 'Mindclone Data Intake',
+          purpose: 'AI Personality Clone Training Data'
         }
       };
+      
 
-      const emailBody = `Mindclone Data Collection Results\n\nTimestamp: ${exportData.timestamp}\nUser: ${exportData.userEmail}\nTotal Responses: ${exportData.totalResponses}\nCompletion Rate: ${exportData.metadata.completionRate}\n\nPlease find the complete data in JSON format below:\n\n${JSON.stringify(exportData, null, 2)}`;
+
+      const emailBody = `Mindclone Data Collection Results\\n\\nTimestamp: ${exportData.timestamp}\\nUser: ${exportData.userEmail}\\nTotal Responses: ${exportData.totalResponses}\\nCompletion Rate: ${exportData.completionRate}\\n\\nPlease find the complete data in JSON format below:\\n\\n${JSON.stringify(exportData, null, 2)}`;
       
       const subject = `Mindclone Data from ${exportData.userEmail} - ${new Date().toLocaleDateString()}`;
       const mailtoLink = `mailto:arnav9637@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`;

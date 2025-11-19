@@ -41,6 +41,13 @@
           "hint": "Intellectual evolution.",
           "example_good": "I used to think delegation was weakness, but I learned it's multiplication.",
           "example_bad": "I changed my mind about things."
+        },
+        {
+          "id": "q_intellectual_conflict",
+          "text": "When you disagree with someone smart, what is your default assumption?",
+          "hint": "Intellectual humility vs. confidence.",
+          "example_good": "I assume I am missing a variable they can see.",
+          "example_bad": "I assume they are wrong."
         }
       ]
     },
@@ -68,6 +75,13 @@
           "hint": "Emergency fuel source.",
           "example_good": "Proving the skeptics wrong. Competitive spite.",
           "example_bad": "Success."
+        },
+        {
+          "id": "q_info_diet",
+          "text": "What specific sources (blogs, authors, newsletters) do you read religiously?",
+          "hint": "The training data for your brain.",
+          "example_good": "Stratechery, The marginalian, and old Berkshire Hathaway letters.",
+          "example_bad": "The news."
         }
       ]
     },
@@ -102,6 +116,13 @@
           "hint": "USP (Unique Selling Proposition).",
           "example_good": "I only use palette knives, never brushes, so the texture is aggressive.",
           "example_bad": "It looks cool."
+        },
+        {
+          "id": "q_art_failure",
+          "text": "What makes a piece of art 'bad' in your eyes?",
+          "hint": "Your aesthetic red line.",
+          "example_good": "When it is technically perfect but lacks a soul or distinct voice.",
+          "example_bad": "Ugly colors."
         }
       ]
     },
@@ -487,6 +508,13 @@
           "hint": "Expectations.",
           "example_good": "Active listener. Challenge my assumptions, don't just nod.",
           "example_bad": "Good listener."
+        },
+        {
+          "id": "q_bad_news_delivery",
+          "text": "How do you deliver bad news or criticism?",
+          "hint": "The velvet hammer vs. the blunt object.",
+          "example_good": "I state the facts immediately, then discuss the fix. No 'compliment sandwiches'.",
+          "example_bad": "I try to be nice about it."
         }
       ]
     },
@@ -514,6 +542,13 @@
           "hint": "Pivot point.",
           "example_good": "New, contradictory data presented respectfully.",
           "example_bad": "Nothing."
+        },
+        {
+          "id": "q_risk_tolerance",
+          "text": "What is your philosophy on risk taking?",
+          "hint": "Gambler vs. Actuary.",
+          "example_good": "I take huge risks on reputation/ideas, but zero risks on financial solvency.",
+          "example_bad": "I like risks."
         }
       ]
     },
@@ -588,6 +623,13 @@
           "hint": "Alien concepts.",
           "example_good": "Passive aggression. I prefer direct conflict over hidden agendas.",
           "example_bad": "Lying."
+        },
+        {
+          "id": "q_hiring_trait",
+          "text": "If you could only test for one trait in a new hire, what would it be?",
+          "hint": "The predictor of success.",
+          "example_good": "Agency. The ability to figure things out without instructions.",
+          "example_bad": "Hard worker."
         }
       ]
     },
@@ -662,6 +704,13 @@
           "hint": "Coping strategy.",
           "example_good": "I switch tasks to something low-stakes, like clearing email.",
           "example_bad": "I stop."
+        },
+        {
+          "id": "q_digital_hygiene",
+          "text": "How do you manage your digital environment (notifications, apps, desktop)?",
+          "hint": "Digital minimalism vs. chaos.",
+          "example_good": "Zero notifications allowed. My desktop is empty. I live in one app at a time.",
+          "example_bad": "I just use my phone."
         }
       ]
     },
@@ -785,10 +834,17 @@
         },
         {
           "id": "q_missing_question",
-          "text": "What question should have been asked but wasn’t?",
+          "text": "What question should have been asked but wasn't?",
           "hint": "Missing piece.",
           "example_good": "You didn't ask about my relationship with failure.",
           "example_bad": "Nothing."
+        },
+        {
+          "id": "q_shadow_self",
+          "text": "What is a trait you have that you are trying to minimize or hide?",
+          "hint": "The flaw the AI should filter out.",
+          "example_good": "My tendency to interrupt people because I think I know the end of their sentence.",
+          "example_bad": "I work too hard."
         }
       ]
     }

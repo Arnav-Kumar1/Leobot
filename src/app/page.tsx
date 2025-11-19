@@ -51,6 +51,16 @@ export default function Page() {
   };
 
   const handleExport = async () => {
+    // Check if all questions are answered
+    const totalQuestions = sections.reduce((sum, section) => sum + section.questions.length, 0);
+    const answeredQuestions = Object.values(responses).filter(r => r?.trim()).length;
+    const unansweredCount = totalQuestions - answeredQuestions;
+    
+    if (unansweredCount > 0) {
+      alert(`⚠️ Please complete all questions before exporting.\n\n${unansweredCount} question${unansweredCount === 1 ? '' : 's'} still need${unansweredCount === 1 ? 's' : ''} to be answered.\n\nYou can navigate through sections using the horizontal section grid above or the Previous/Next buttons below.`);
+      return;
+    }
+    
     setIsSaving(true);
     try {
       const exportData = {
@@ -138,6 +148,19 @@ export default function Page() {
             />
           </div>
         )}
+
+        {/* Export Information Note */}
+        <div className="mb-6 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+          <div className="flex items-center mb-2">
+            <svg className="w-5 h-5 text-blue-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+            <span className="font-semibold text-blue-800">Export Information</span>
+          </div>
+          <p className="text-blue-700 text-sm">
+            The <strong>"Complete & Export"</strong> button will appear at the end of the final section once all questions are answered. You can fill out sections in any order using the section grid above.
+          </p>
+        </div>
 
         {/* Progress Bar */}
         {questionsData.meta.settings.show_progress_bar && isHydrated && (
